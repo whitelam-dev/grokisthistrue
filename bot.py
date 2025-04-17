@@ -24,6 +24,15 @@ async def on_message(message):
     # Ignore messages from bots (including itself)
     if message.author.bot:
         return
+    # Reply to any message containing "fastkev"
+    if 'fastkev' in message.content.lower():
+        await message.channel.send("idk about that but fastkev is gay hahaha")
+        return
+
+    # Reply to any message containing "bad_stats" variants
+    if any(keyword in message.content.lower() for keyword in ['bad_stats', 'bad stats', 'badstats']):
+        await message.channel.send("idk about that but badstats is gay hahahahaha")
+        return
 
     # Check if the bot is mentioned
     if client.user in message.mentions:
